@@ -1,15 +1,18 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
+import { Header } from './components/Header';
+import { Main } from './components/Main';
+import languages from "./components/languages.js";
 
-
-const app = () => {
+const App = () => {
   const [state, setState] = useState(0);
+  
   return (
     <>
       <Header />
-      <Main />
+      <Main languagesProgram={languages}/>
     </>
   );
 };
 
-export default App
+export default App;
