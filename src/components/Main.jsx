@@ -1,15 +1,32 @@
 import './Main.css';
 
-
-export const Main = () => (
+const Line = (props) => (
     <main>
-        <div>
-            <button>HTML</button>
-            <button>CSS</button>
-            <button>JavaScript</button>
-            <button>Node.js</button>
-            <button>Express</button>
-            <button>ReactJs</button>
+        <div className="btnProgram">
+            {
+                props.languagesProgram.map(singleLanguage => (
+                    <button key={singleLanguage.id}>
+                        {singleLanguage.title}
+                    </button>
+                ))
+            }
+
         </div>
+
+        <div className="textProgram">
+            {
+                props.languagesProgram.map(singleLanguage => (
+                    <div key={singleLanguage.id}>
+                        {singleLanguage.description}
+                    </div>
+                ))
+            }
+        </div>
+
     </main>
+)
+
+
+export const Main = (props) => (
+    <Line languagesProgram={props.languagesProgram} />
 );
