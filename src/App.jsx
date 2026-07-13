@@ -5,7 +5,7 @@ import { Main } from './components/Main';
 import languages from "./components/languages.js";
 
 const App = () => {
-  const [state, setState] = useState(0);
+  const [state, setState] = useState(false);
   
   return (
     <>

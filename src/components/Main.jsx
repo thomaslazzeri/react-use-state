@@ -5,7 +5,9 @@ const Line = (props) => (
         <div className="btnProgram">
             {
                 props.languagesProgram.map(singleLanguage => (
-                    <button key={singleLanguage.id}>
+                    <button onClick={() => setState(state => !state)}
+                        className={state ? 'state' : null}
+                        key={singleLanguage.id}>
                         {singleLanguage.title}
                     </button>
                 ))
@@ -25,7 +27,6 @@ const Line = (props) => (
 
     </main>
 )
-
 
 export const Main = (props) => (
     <Line languagesProgram={props.languagesProgram} />
