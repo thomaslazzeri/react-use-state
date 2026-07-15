@@ -1,37 +1,37 @@
 import './Main.css';
+import { useState } from 'react';
 
-const Line = (props) => {
+const Main = props => {
 
-    const state = () => setState(state => !state);
+    const [activeId, setActiveId] = useState(null);
+
+    return (
+
+        <main>
+
+            <div className="btnProgram">
+                {
+                    props.languagesProgram.map(singleLanguage => (
+                        <button className={`btn-lang ${(singleLanguage.id === activeId) ? 'active' : ''}`}
+                            onClick={() => setActiveId(singleLanguage.id)}
+
+                            key={singleLanguage.id}>
+                            {singleLanguage.title}
+                        </button>
+                    ))
+                }
+
+            </div>
+
+            <div>
+                {
+                    props.languagesProgram.find(item => item.id === activeId)?.description
+                }
+            </div>
 
 
-
-
-    <main>
-        <div className="btnProgram">
-            {
-                props.languagesProgram.map(singleLanguage => (
-                    <button key={singleLanguage.id}>
-                        {singleLanguage.title}
-                    </button>
-                ))
-            }
-
-        </div>
-
-        <div className="textProgram">
-            {
-                props.languagesProgram.map(singleLanguage => (
-                    <div key={singleLanguage.id}>
-                        {singleLanguage.description}
-                    </div>
-                ))
-            }
-        </div>
-
-    </main>
+        </main>
+    )
 }
 
-export const Main = (props) => {
-    <Line languagesProgram={props.languagesProgram} />
-};
+export default Main

@@ -1,0 +1,7 @@
+.btn-lang {
+    background: lightgreen;
+}
+
+.btn-lang.active {
+    background-color: red;
+}
