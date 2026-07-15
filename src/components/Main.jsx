@@ -23,7 +23,7 @@ const Main = props => {
 
             </div>
 
-            <div>
+            <div className="text-language">
                 {
                     props.languagesProgram.find(item => item.id === activeId)?.description
                 }
