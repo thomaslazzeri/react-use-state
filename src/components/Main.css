@@ -16,13 +16,13 @@ main {
 
 .btn-lang.active {
     color: white;
-    background-color: rgb(162, 73, 244);
+    background-color: #a249f4;
 }
 
 .text-language {
     margin: 10px 500px;
     padding: 20px;
-    background-color: rgb(162, 73, 244);
+    background-color: #a249f4;
     color: white;
     border-radius: 15px;
 }
